@@ -61,6 +61,7 @@ body {
 .movies-list {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .movie-card {
@@ -157,5 +158,54 @@ body {
     background-color: $font-secondary;
     color: $font-primary;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .movies-container {
+    padding: 16px;
+  }
+
+  .movie-card {
+    max-width: 140px;
+
+    img {
+      height: 200px;
+      width: 100%;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .header {
+    padding: 16px 8px;
+  }
+  .header__logo {
+    font-size: 16px;
+    font-weight: 100;
+  }
+  .search {
+    width: 200px;
+
+    input {
+      font-size: 14px;
+      width: 60%;
+    }
+
+    button {
+      padding: 4px 8px;
+    }
+  }
+
+  .movie-section {
+    flex-direction: column-reverse;
+  }
+
+  .movie-rating {
+    display: grid;
+    grid-column: 1fr 1fr;
+    gap: 4px;
   }
 }
