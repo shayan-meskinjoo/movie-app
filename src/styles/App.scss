@@ -1,0 +1,161 @@
+$primary-col: #1f171e;
+$secondary-col: #1a242f;
+$font-primary: #fff;
+$font-secondary: #79b8f3;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: $primary-col;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $secondary-col;
+  color: $font-primary;
+
+  &__logo {
+    font-weight: 500px;
+  }
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  padding: 16px 32px;
+  background-color: $secondary-col;
+  color: $font-primary;
+  display: flex;
+  justify-content: center;
+}
+
+.movies-container {
+  padding: 32px;
+  
+
+  h1 {
+    color: $font-secondary;
+    margin-bottom: 16px;
+  }
+}
+.movies-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  margin: 16px 8px;
+  max-width: 220px;
+  background-color: $secondary-col;
+  color: $font-primary;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+  }
+
+  img {
+    height: 300px;
+    width: 100%;
+  }
+
+  p{
+    padding: 8px;
+  }
+
+  h5 {
+    padding: 0 8px 8px 8px;
+  }
+
+}
+
+.shows {
+  margin-top: 24px;
+}
+
+.movie-section {
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  color: $font-primary;
+}
+
+.section-left {
+  color: $font-primary;
+  padding-right: 64px;
+}
+
+.movie-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.movie-rating {
+  margin-bottom: 32px;
+
+  span {
+    margin-right: 20px;
+    font-size: 18px;
+    color: $font-secondary;
+  }
+}
+
+.movie-plot {
+  font-size: 17px;
+  margin-bottom: 16px;
+  line-height: 1.6rem;
+}
+
+.movie-info > div span:first-child{
+  padding: 10px 0;
+  color: $font-secondary;
+  font-weight: 600;
+  width: 100px;
+  display: inline-block;
+}
+
+.search {
+  width: 350px;
+
+  input {
+    width: 70%;
+    padding: 5px 16px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px 0 0 8px;
+    border: none;
+  }
+
+  button {
+    padding: 5px 16px;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    font-size: 16px;
+    background-color: $font-secondary;
+    color: $font-primary;
+    cursor: pointer;
+  }
+}
