@@ -30,7 +30,8 @@ export const fetchDetail = createAsyncThunk("movies/fetchDetail", async(id) => {
 const initialState = {
   movies: {},
   shows: {},
-  selectedDetail: {}
+  selectedDetail: {},
+  isLoading: false
 };
 
 const moviesSlice = createSlice({
@@ -43,11 +44,12 @@ const moviesSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(fetchAsyncMovie.pending, () => {
-        console.log("Pending");
+      .addCase(fetchAsyncMovie.pending, (state) => {
+        state.isLoading = !state.isLoading
       })
       .addCase(fetchAsyncMovie.fulfilled, (state, action) => {
         state.movies = action.payload;
+        state.isLoading = !state.isLoading
       })
       .addCase(fetchAsyncMovie.rejected, () => {
         console.log("rejected");

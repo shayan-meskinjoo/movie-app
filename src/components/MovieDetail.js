@@ -7,12 +7,12 @@ import {
   getDetail,
   removeSelectedDetail,
 } from "./features/slices/moviesSlice";
+import Loading from "./Loading";
 
 export default function MovieDetail() {
   const { imdbID } = useParams();
   const dispatch = useDispatch();
   const data = useSelector(getDetail);
-  console.log(data);
 
   useEffect(() => {
     dispatch(fetchDetail(imdbID));
@@ -25,7 +25,7 @@ export default function MovieDetail() {
   return (
     <div className="movie-section">
       {Object.keys(data).length === 0 ? (
-        <div>...Loadung</div>
+        <div><Loading /></div>
       ) : (
         <>
           <div className="section-left">
